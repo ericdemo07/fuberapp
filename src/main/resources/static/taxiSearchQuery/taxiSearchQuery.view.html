@@ -1,0 +1,62 @@
+<div class="container">
+	<div class="row" style="padding-top: 30px;">
+		<div class="jumbotron">
+			<h4>Fuber App</h4>
+			<h6>taxi at your doorstep</h6>
+			<p>
+				<a class="btn btn-default" href="https://github.com/ericdemo07"
+					role="button">Get to know us</a>
+			</p>
+		</div>
+	</div>
+	<form name="form" ng-submit="getBrandNames()" role="form"
+		class="form-inline">
+		<div class="row" style="padding-top: 30px;">
+			<label for="latitude" class="sr-only">Latitude</label>
+			<div class="col-md-1 col-lg-1"></div>
+			<div class="col-md-3 col-lg-3">
+				<input id="latitude" type="text" ng-model="vm.latitude.value"
+					class="form-control" placeholder="enter latitute">
+			</div>
+			<label for="longitude" class="sr-only">BrandName</label>
+			<div class="col-md-3 col-lg-3">
+				<input id="longitude" type="text" ng-model="vm.longitude.value"
+					class="form-control" placeholder="enter longitude">
+			</div>
+			<div class="col-md-2 col-lg-2">
+				<label><input id="modelName" type="checkbox"
+					ng-model="vm.pinkflag.value">PinkTaxiFlag</label>
+			</div>
+			<div class="col-md-3 col-lg-3">
+				<button type="submit" class="btn btn-default">SHOW
+					AVAILABLE TAXI</button>
+			</div>
+			<div class="col-md-1 col-lg-1">
+				<img ng-if="vm.dataLoading"
+					src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+			</div>
+		</div>
+	</form>
+	<div class="row bg-light1" style="padding-top: 30px;">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<table>
+				<div>
+				<tr>
+					<th>{{taxiNumber}}</th>
+					<th>{{distance}}</th>
+					<th>{{flag_pink}}</th>
+				</tr>
+				</div>
+				<tr ng-repeat="taxiDetailResponse in taxiDetailResponseArray">
+					<td>{{taxiDetailResponse.taxiNumber}}</td>
+					<td>{{taxiDetailResponse.distance.toFixed(2)}}</td>
+					<td>{{taxiDetailResponse.flag_pink}}</td>
+					<td><button type="submit" class="btn btn-default">BOOK
+							NOW</button></td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>

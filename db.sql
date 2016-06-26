@@ -1,0 +1,49 @@
+
+--
+-- Table structure for table `taxi`
+--
+DROP TABLE IF EXISTS `taxi`;
+
+CREATE TABLE `taxi` 
+(
+  `taxi_number` VARCHAR(15) NOT NULL,
+  `latitude` DECIMAL(8,5) NOT NULL,
+  `longitude` DECIMAL(8,5) NOT NULL,
+  `flag_pink` BOOLEAN NOT NULL,
+  `flag_occupied` BOOLEAN NOT NULL, 
+  PRIMARY KEY (`taxi_number`)
+) ENGINE=InnoDB;
+
+--
+-- Dumping data for table `taxi`
+--
+INSERT INTO `taxi` 
+VALUES
+('KA02HR5021',012.07732,77.37498,1,0),
+('KA04AB3022',012.17733,77.74444,0,1),
+('KA01QW5454',013.38743,77.76666,0,0),
+('KA03DF2929',014.43431,77.55677,1,1),
+('KA01RT5674',011.32281,78.76444,0,0),
+('KA01ER4949',013.23233,77.26666,0,0),
+('KA04GH9595',011.32355,77.65785,0,0),
+('KA02HT6767',013.47847,76.57753,1,0),
+('KS01GH5656',012.34878,77.32334,0,1),
+('KA01TY3737',013.34874,76.75444,0,0),
+('KA09UI5959',013.02784,77.43555,0,1),
+('KA03HT4742',012.12328,76.65665,1,0),
+('KA02HR5621',011.98556,77.65732,0,1);
+
+--
+-- Table structure for table `taxi`
+--
+DROP TABLE IF EXISTS `customer`;
+
+CREATE TABLE `customer`
+(
+`cust_id` INT(5) NOT NULL,
+`latitude` DECIMAL(8,5) NOT NULL,
+`longitude` DECIMAL(8,5) NOT NULL,
+`amount` DECIMAL(8,5) NOT NULL,
+PRIMARY KEY (`cust_id`)
+);
+
