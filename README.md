@@ -2,7 +2,7 @@ Fuber App(a taxi booking service)
 ===================
 
 
-#####This application will serve following purpose
+##### This application will serve following purpose
 ----------
  - customer can call  taxis by providing their location
  -  user having choice of pink taxi will be served
